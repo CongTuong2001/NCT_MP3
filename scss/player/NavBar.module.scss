@@ -1,0 +1,91 @@
+@import '../variable';
+@import '../utils.scss';
+
+.navbar{
+    width: 100%;
+    height: calc(100vh - $player-control-height);
+    display: flex;
+    flex-direction: column;
+
+    & .logo{
+        padding: 20px 0;
+        width: 80%;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    & .links{
+        display: flex;
+
+        flex-grow: 1;
+
+        justify-content: flex-start;
+
+        flex-direction: column;
+
+        & .active{
+            background-color: $primary-color;
+            span{
+                color: $text-secondary;
+            }
+            svg{
+                color: $text-primary;
+            }
+        }
+
+        & > ul{
+            width: 100%;
+            
+
+            & >li{
+                width: 100%;
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                
+                transition: $smooth;
+
+                cursor: pointer;
+
+                &:hover{
+                    transition: $smooth;
+                    background-color: $primary-color;
+                }
+                &:hover span{
+                    transition: $smooth;
+                    color: $text-secondary;
+                }
+                &:hover svg{
+                    transition: $smooth;
+                    color: $text-primary;
+                }
+
+                & > svg{
+                    transition: $smooth;
+                    font-size: 25px;
+                    width: 60px;
+                    // padding-right: 15px;
+                    color: $text-secondary;
+                    @include mobile{
+                        width: 40px;
+                        
+                    }
+                }
+                & > span{
+                    transition: $smooth;
+                    font-weight: 600;
+
+                    @include mobile{
+                        display: none;
+                    }
+                }
+
+                @include mobile{
+                    padding: 10px 5px;
+                    justify-content: center;
+
+                }
+            }
+        }
+    }
+}

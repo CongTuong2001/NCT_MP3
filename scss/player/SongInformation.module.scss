@@ -1,0 +1,42 @@
+@import '../variable';
+@import '../utils.scss';
+
+.songInformation{
+    width: 25%;
+
+    display: flex;
+    align-items: center;
+    
+    padding-left: 20px;
+
+    @include mobile{
+        display: none;
+    }
+
+    .avtImg{
+
+        & img{
+            object-fit: cover;
+
+            border-radius: 10px;
+        }
+    }
+
+    .info{
+        margin-left: 15px;
+
+
+        .name{
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.8em;
+        }
+        .singer{
+            font-size: 13px;
+            color: $text-secondary;
+
+        }
+    }
+
+
+}

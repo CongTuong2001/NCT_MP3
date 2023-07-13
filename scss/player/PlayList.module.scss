@@ -1,0 +1,39 @@
+
+@import '../variable';
+@import '../utils.scss';
+.wrapper{
+    width: 100%;
+    height: calc(100vh - $header-height - $player-control-height);
+}
+
+.playlist{
+    display: flex;
+    height: 100%;
+    
+    .playlistHeader{
+        width: 35%;
+        
+        display: flex;
+        justify-content:center;
+        align-items: center;
+
+        @include tablet{
+            display: none;
+        }
+        @include mobile{
+            display: none;
+        }
+    }
+
+
+    .playlistContent{
+        width: 65%;
+        // flex-grow: 1;
+        @include tablet{
+            width: 100%;
+        }
+        @include mobile{
+            width: 100%;
+        }
+    }
+}

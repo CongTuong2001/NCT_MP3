@@ -1,0 +1,107 @@
+@import '../variable';
+@import '../utils.scss';
+
+.wrapper{
+    width: 100%;
+
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    padding: 20px 20px;
+    height: $header-height;
+
+    align-items: center;
+    justify-content: space-between;
+
+    @include mobile{
+        padding: 10px 5px;
+    }
+
+    .search{
+        margin-right: 10px;
+        width: 550px;
+        padding: 0 10px;
+
+        display: flex;
+        align-items: center;
+
+        background-color: $primary-color-light;
+
+        border-radius: 25px;
+        
+        cursor: pointer;
+        position: relative;
+
+
+        & > input:focus + .searchResult{
+            display: block!important;
+        }
+        & .searchResult:hover{
+            display: block!important;
+        }
+
+        & > .searchResult{
+            display: none;
+            background-color: $primary-color-light;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 5;
+        }
+
+
+        & > input{
+            width: 100%;
+            background-color: transparent;
+            color: $text-primary;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+        & svg{
+            font-size: 30px;
+            cursor: pointer;
+            transition: --smooth;
+
+            &:hover{
+                color: $text-secondary;
+                transition: --smooth;
+            }
+        }
+
+
+    }
+    
+    .links{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-left: auto;
+
+
+
+        & > svg{
+            margin-right: 25px;
+            cursor: pointer;
+            transition: --smooth;
+
+            &:hover{
+                color: $text-secondary;
+                transition: --smooth;
+            }
+            @include mobile{
+                margin-right: 15px;
+                display: none;
+            }
+        }
+    }
+}
+
+.avatarImg{
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}

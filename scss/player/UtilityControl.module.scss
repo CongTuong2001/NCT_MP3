@@ -1,0 +1,159 @@
+@import '../utils.scss';
+@import '../variable.scss';
+
+.utilityControl{
+    width: 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile{
+        position: absolute;
+        right: 0px;
+        // top: 30%;
+        width: 30px;
+        height: 70px;
+    }
+
+
+
+    .volumeControl{
+
+        width: 100%;
+
+        margin: 0 15px;
+        display: flex;
+        align-items: center;
+
+        @include mobile{
+            display: none!important;
+        }
+    }
+    .verticalVolumeControl{
+        display: none!important;
+        width: 100%;
+        // margin: 0 20px;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+
+        padding-top: 15px;
+
+        transform: translateY(calc(-15px / 2));
+
+        @include mobile{
+            display: block!important;
+        }
+
+        .verticalSliderVolume{
+            position: absolute;
+            bottom: calc(100% - 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            
+            padding: 2px 15px;
+            display: none;
+            
+            
+
+
+            .verticalSliderVolumeBase{
+                
+                background-color: $text-secondary;
+                width: 3px;
+                height: 150px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                border-radius: 10px;
+
+
+                & > .volume{
+                    height: 20%;
+                    width: 100%!important;
+                    position: relative;
+
+                    border-radius: 10px;
+                    // margin-top: 50%;
+
+                    // transform: translateY(calc(100% - 20%)  );
+
+                    background-color: $text-primary;
+
+                    & > span{
+                        position: absolute;
+                        width: 6px;
+                        height: 6px;
+                        background-color: $text-primary;
+                        left: 50%;
+                        top: 0;
+                        transform: translateX(-60%);
+
+                        border-radius: 50%;
+                    }
+
+                }
+            }
+
+            
+            // &:hover {
+            //     color: $text-secondary!important;
+            // }
+        }
+        &:hover  .verticalSliderVolume{
+            display: block!important;
+        }
+
+
+    }
+
+}
+
+.sliderVolume{
+    margin-left: 10px;
+    padding: 15px 0;
+
+    width: 100%;
+    // background-color: $primary-color;
+    height: 10px;
+
+    cursor: pointer;
+
+    &:hover > .sliderVolumeBase > .volume > span{
+        display: block;
+        transition: $smooth;
+    }
+    &:hover > .sliderVolumeBase{
+        box-shadow: 0px 0px 2px 1px white;
+    }
+
+    .sliderVolumeBase{
+        width: 100%;
+        background-color: $text-secondary;
+        height: 4px;
+        border-radius: 15px;
+
+        & > .volume{   
+            width: 50%;
+            height: 100%;
+            background-color: $text-primary;
+            position: relative;
+            border-radius: 15px;
+
+            & > span{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 10px;
+                height: 10px;
+                background-color: $text-primary;
+                border-radius: 50%;
+                transform: translateX(50%) translateY(-25%);
+                display: none;
+            }
+        }
+
+    }
+}

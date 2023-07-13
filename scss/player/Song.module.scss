@@ -1,0 +1,144 @@
+@import '../variable';
+@import '../utils.scss';
+
+.song{
+    cursor: pointer;
+    transition: $smooth;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+   
+    border-bottom: 1px $text-secondary solid;
+    padding: 10px 0;
+
+    @include mobile{
+        padding: 8px 0;
+    }
+
+
+    @include mobile{
+        // flex-direction: column;
+
+        & .name{
+            width: 100%!important;
+        }
+
+        & .singer{
+            display: none!important;
+        }
+    }
+
+
+
+    & .name{
+        width: 50%;
+        padding-left: 10px;
+
+        display: flex;
+        align-items: center;
+
+        & .singerHidden{
+            display: none;
+            color: $text-secondary;
+            @include mobile{
+                display: block;
+            }
+        }
+
+        // @include mobile{
+
+        // }
+
+        & .avtImg{
+            position: relative;
+
+            & > div{
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                background-color: $hover-background;
+                transition: $smooth;
+            }
+
+            & > .playingGif{
+                display: flex;
+            }
+        }
+
+        & span{
+           display: inline-block;
+           padding-left: 10px;
+        }
+
+        & img{
+            border-radius: 10px;
+        }
+        
+        &:hover{
+            color: $text-secondary;
+        }
+    }
+
+    & .singer{
+        width: 30%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        color:$text-secondary;
+
+        & svg{
+            display: none;
+            transition: $smooth;
+
+            &:hover{
+                transition: $smooth;
+                color: $text-secondary;
+            }
+        }
+    }
+    & .time{
+        width: 20%;
+        text-align: center;
+        color: $text-secondary;
+
+        @include mobile{
+            display: none;
+        }
+    }
+
+    
+    &:hover .avtImg > div{
+        display: flex;
+        transition: $smooth;
+    }
+
+    &:hover .singer svg{
+        display: block;
+        transition: $smooth;
+        
+        @include mobile{
+            display: none!important;
+        }
+        
+    }
+
+    &:hover{
+        background-color: $primary-color-light;
+        transition: $smooth;
+    }
+}
+
+.active{
+    background-color: $primary-color;
+    transition: $smooth;
+
+}

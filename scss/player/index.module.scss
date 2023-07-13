@@ -1,0 +1,43 @@
+@import "../variable";
+@import "../utils.scss";
+
+.wrapper{
+    max-width: 100%;
+    height: 100vh;
+
+    background-color: $primary-color-dark;
+    color: $text-primary;   
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    
+
+
+    .navbar{
+        min-width: 220px;
+        background-color: $primary-color-light;
+        height: 100vh;
+        @include mobile{
+            min-width: 69px;
+        }
+    }
+    .content{
+        padding: 0 10px;
+        width: calc(100% - 220px);
+        display: flex;
+        flex-direction: column;
+
+        @include mobile{
+            min-width: calc(100% - 69px);
+            padding: 0 5px;
+        }
+    }
+}
+
+
+
+
+
+
